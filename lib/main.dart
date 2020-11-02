@@ -40,7 +40,9 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       appBar: AppBar(
+        backgroundColor: Colors.green,
         title: Text("Download Images")
       ),
       body: FutureBuilder<List<Photo>>(

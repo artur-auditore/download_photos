@@ -13,6 +13,7 @@ class DownloadScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.green[100],
       appBar: AppBar(
+        backgroundColor: Colors.green,
         title: Text('Image'),
       ),
       body: Padding(
