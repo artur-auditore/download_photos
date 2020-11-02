@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:download_photos/DownloadScreen.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -69,8 +70,17 @@ class PhotosList extends StatelessWidget {
       ),
       itemCount: photos.length,
       itemBuilder: (context, index) {
-        print("downloading image: $index");
-        return  Image.network(photos[index].thumbnailUrl);
+        return InkWell(
+          child: Image.network(photos[index].thumbnailUrl),
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => DownloadScreen(photo: photos[index]),
+              ),
+            );
+          },
+        );
       },
     );
   }
